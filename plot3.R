@@ -13,7 +13,7 @@ pow<-subset(newFile, Date=="1/2/2007" | Date== "2/2/2007")
 pow$DateTime <- strptime(paste(pow$Date, pow$Time),
                          format="%d/%m/%Y %H:%M:%S")
 
-# plot 3
+# plot 3 using different colors 
 png(file="plot3.png", width=480, height=480)
 plot(pow$DateTime,pow$Sub_metering_1, xlab = "", ylab = "Energy sub metering", pch = ".")                                                                            
 lines(pow$DateTime,pow$Sub_metering_1)

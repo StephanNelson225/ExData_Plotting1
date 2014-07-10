@@ -6,10 +6,10 @@ newFile <- read.table("household_power_consumption.txt", header=TRUE, sep=";", n
 pow<-subset(newFile, Date=="1/2/2007" | Date== "2/2/2007")
 
 
-# Manipulate Time and date
+# Manipulate Time and date using strptime function
 pow$DateTime <- strptime(paste(pow$Date, pow$Time),format="%d/%m/%Y %H:%M:%S")
 
-# plot 2
+# plot 2 Plot both lines and points
 png(file="plot2.png", width=480, height=480)
 plot(pow$DateTime,pow$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", pch = ".")
 lines(pow$DateTime,pow$Global_active_power)

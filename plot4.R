@@ -9,7 +9,7 @@ pow<-subset(newFile, Date=="1/2/2007" | Date== "2/2/2007")
 pow$DateTime <- strptime(paste(pow$Date, pow$Time),
                          format="%d/%m/%Y %H:%M:%S")
 
-# Plot 4 has some tricky differences with the other plots. 
+# Plot 4 has some differences with the other similar plots. 
 # The equivalent of plot three has no border around the legend
 # Also the x axis labels for the two graphs on the right "datetime" 
 # aren't cleaned up and would be better as "Date and Time" Further
@@ -24,7 +24,7 @@ plot(pow$DateTime,pow$Voltage, xlab = "datetime", ylab = "Voltage", pch= ".")
 lines(pow$DateTime,pow$Voltage)
 plot(pow$DateTime,pow$Sub_metering_1, xlab = "", ylab = "Energy sub metering", pch = ".")
 legend("topright", c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"), 
-       lty = c(1,1), col = c("black", "red", "blue"), bty = "n")    
+       lty = c(1,1), col = c("black", "red", "blue"), bty = "n")  #btyn gets rid of the legend box  
 lines(pow$DateTime,pow$Sub_metering_1)
 lines(pow$DateTime,pow$Sub_metering_2, col = "red")
 lines(pow$DateTime,pow$Sub_metering_3, col = "blue")
